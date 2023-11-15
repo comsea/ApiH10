@@ -11,9 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ContactController extends AbstractController
 {
-    /**
-     * @Route("/contact", name="contact_form", methods={"POST"})
-     */
+    #[Route('/contact', methods: ['POST', 'GET'])]
     public function handleContactForm(Request $request, MailerInterface $mailer): Response
     {
         $data = json_decode($request->getContent(), true);
