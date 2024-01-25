@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ActualiteController!{% endblock %}
+
+{% block head %}
+    <meta property="og:title" content='{{ actu.title }}' />
+    <meta property="og:description" content='Venez découvrir le nouvel article du Réseau H10' />
+    <meta property="og:url" content='https://www.reseauh10.fr/actualite/{{ actu.id }}' />
+    <meta property="og:image" content='{{ asset("build/images/" ~ actu.image) }}' />
+    <meta property="og:type" content="article" />
+
+    <script>
+        window.location.href = 'https://www.reseauh10.fr/actualite/'+{{ actu.id }};
+    </script>
+{% endblock %}
+
+{% block body %}
+    <p>{{ actu.title }}</p>
+    <script>
+        window.location.href = 'https://www.reseauh10.fr/actualite/'+{{ actu.id }};
+    </script>
+{% endblock %} 
